@@ -47,4 +47,11 @@ public class SurveyDetails {
         this.answer = answer;
     }
 
+    public LocalDateTime getLaunchDate() {
+        return launchDate;
     }
+
+    public void setLaunchDate(LocalDateTime launchDate) {
+        this.launchDate = launchDate;
+    }
+}

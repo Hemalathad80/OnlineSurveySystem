@@ -122,3 +122,27 @@ drop table [42001-200]
 2021-08-17 14:43:32 jdbc[13]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DROP TABLE *[*]"; expected "identifier"; SQL statement:
 drop table * [42001-200]
+2021-08-18 11:57:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "QUESTION VARCHAR(255)": "STRINGDECODE('Question 1: Are you looking forward to returning to work?,Question 2: Have you been equally productive, less produ... (1084)"; SQL statement:
+insert into survey_details (id, answer, launch_date, question) values (null, ?, ?, ?) [22001-200]
+2021-08-18 11:57:16 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "QUESTION VARCHAR(255)": "STRINGDECODE('Question 1: Are you looking forward to returning to work?,Question 2: Have you been equally productive, less produ... (1084)"; SQL statement:
+insert into survey_details (id, answer, launch_date, question) values (null, ?, ?, ?) [22001-200]
+2021-08-18 11:57:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "QUESTION VARCHAR(255)": "STRINGDECODE('Question 1: Are you looking forward to returning to work?,Question 2: Have you been equally productive, less produ... (1084)"; SQL statement:
+insert into survey_details (id, answer, launch_date, question) values (null, ?, ?, ?) [22001-200]
+2021-08-18 12:13:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "QUESTION VARCHAR(255)": "STRINGDECODE('Question 1: Are you looking forward to returning to work?,Question 2: Have you been equally productive, less produ... (1084)"; SQL statement:
+insert into survey_details (id, answer, launch_date, question) values (null, ?, ?, ?) [22001-200]
+2021-08-18 12:13:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "QUESTION VARCHAR(255)": "STRINGDECODE('Question 1: Are you looking forward to returning to work?,Question 2: Have you been equally productive, less produ... (1084)"; SQL statement:
+insert into survey_details (id, answer, launch_date, question) values (null, ?, ?, ?) [22001-200]
+2021-08-18 12:13:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "QUESTION VARCHAR(255)": "STRINGDECODE('Question 1: Are you looking forward to returning to work?,Question 2: Have you been equally productive, less produ... (1084)"; SQL statement:
+insert into survey_details (id, answer, launch_date, question) values (null, ?, ?, ?) [22001-200]
+2021-08-18 12:23:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "QUESTION VARCHAR(255)": "STRINGDECODE('Question 1: Are you looking forward to returning to work?,Question 2: Have you been equally productive, less produ... (1084)"; SQL statement:
+insert into survey_details (id, answer, launch_date, question) values (null, ?, ?, ?) [22001-200]
+2021-08-18 12:24:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "QUESTION VARCHAR(255)": "STRINGDECODE('Question 1: Are you looking forward to returning to work?,Question 2: Have you been equally productive, less produ... (1084)"; SQL statement:
+insert into survey_details (id, answer, launch_date, question) values (null, ?, ?, ?) [22001-200]

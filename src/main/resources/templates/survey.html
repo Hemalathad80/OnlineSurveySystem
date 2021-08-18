@@ -12,33 +12,20 @@
 <h1>Welcome to the Online Survey System</h1><br>
 <h2>COVID-19 Return to work survey</h2>
 
-<form action="#" th:action="@{/saveSurveyDetails}" th:object="${survey}" method="POST">
+<form action="#" th:action="@{/saveSurveyDetails}"  method="POST">
+    <div th:each="survey: ${surveyList}">
+        <p th:text="${survey.question}"></p>
+        <input type=hidden name= "question" th:value="${survey.question}">
 
-    <p th:text="*{question}"  ></p>
-    <input type=hidden th:field="*{question}" name="q1">
-    <input  type="radio" th:field="*{answer}"  name="q1" id="option1" value="Yes">
-    <label for="option1">Yes</label><br>
-    <input  type="radio" th:field="*{answer}"  name="q1" id="option2" value="No">
-    <label  for="option2">No</label><br>
-    <br>
+        <input type="radio" th:value="${survey.answer}" id="option1" name="answer" >
+        <label for="option1">Yes</label><br>
 
-    <p th:text="*{question}"  ></p>
-    <input type=hidden th:field="*{question}" name="q2" >
-    <input  type="radio" th:field="*{answer}" name="q2" id="option3" value="Yes">
-    <label  for="option3">Yes</label><br>
-    <input type="radio" th:field="*{answer}" name="q2" id="option4" value="No">
-    <label  for="option4">No</label><br>
-
-
-
-    <div>Question 10.Are you able to be flexible in your start, break, and finish times to account for social distancing
-        and limiting the number of employees on-site at a single time?Do you have any additional concerns about
-        returning to work? If so, please tell us what they are…<br><br>
-        <textarea rows="5" cols="50" name="description">
-            Enter description here...
-         </textarea>
+        <input type="radio" th:value="${survey.answer}" id="option2" name="answer" >
+        <label for="option2">No</label><br>
+        <br>
     </div>
-    <button type="submit">Submit</button>
+
+     <button type="submit">Submit</button>
 </form>
 </body>
 </html>

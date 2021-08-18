@@ -9,5 +9,7 @@ public interface SurveyService {
     void saveSurveyDetails(SurveyDetails surveyDetails);
 
     SurveyDetails getById(long id);
+
+    void saveAllSurveyDetails(List<SurveyDetails> surveyDetailsList);
 }
 

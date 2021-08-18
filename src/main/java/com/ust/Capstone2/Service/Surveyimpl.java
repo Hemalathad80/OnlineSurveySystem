@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class Surveyimpl implements SurveyService{
+public class Surveyimpl implements SurveyService {
 
     @Autowired
     private SurveyDetailsRepository surveyDetailsRepository;
@@ -17,6 +17,11 @@ public class Surveyimpl implements SurveyService{
     public void saveSurveyDetails(SurveyDetails surveyDetails) {
         this.surveyDetailsRepository.save(surveyDetails);
 
+    }
+
+    @Override
+    public void saveAllSurveyDetails(List<SurveyDetails> surveyDetailsList) {
+        this.surveyDetailsRepository.saveAll(surveyDetailsList);
     }
 
     @Override

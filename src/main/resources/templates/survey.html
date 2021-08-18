@@ -12,20 +12,18 @@
 <h1>Welcome to the Online Survey System</h1><br>
 <h2>COVID-19 Return to work survey</h2>
 
-<form action="#" th:action="@{/saveSurveyDetails}"  method="POST">
-    <div th:each="survey: ${surveyList}">
-        <p th:text="${survey.question}"></p>
-        <input type=hidden name= "question" th:value="${survey.question}">
-
-        <input type="radio" th:value="${survey.answer}" id="option1" name="answer" >
+<form action="#" th:action="@{/saveSurveyDetails}" th:object="${surveyForm}" method="POST">
+    <div th:each="sl, iter : ${questions}" >
+        <p th:text="${sl.question}"></p>
+        <input type=hidden th:value="${sl.question}" th:name="'surveyform['+${iter.index}+'].question'">
+        <input type="radio"  th:value="${sl.answer}" id="option1" th:name="'surveyform['+${iter.index}+'].answer1'" >
         <label for="option1">Yes</label><br>
-
-        <input type="radio" th:value="${survey.answer}" id="option2" name="answer" >
+        <input type="radio" th:value="${sl.answer}" id="option2" th:name="'surveyform['+${iter.index}+'].answer2'" >
         <label for="option2">No</label><br>
         <br>
     </div>
 
-     <button type="submit">Submit</button>
+     <button type="submit" >Submit</button>
 </form>
 </body>
 </html>

@@ -4,6 +4,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @Entity
 @Table(name = "SurveyDetails")
@@ -19,8 +20,8 @@ public class SurveyDetails {
     @Column(name = "answer")
     private String answer;
 
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
-    private LocalDateTime launchDate;
+    @Column(name = "launchDate")
+    private String launchDate;
 
 
     public long getId() {
@@ -47,12 +48,14 @@ public class SurveyDetails {
         this.answer = answer;
     }
 
-    public LocalDateTime getLaunchDate() {
+    public String getLaunchDate() {
         return launchDate;
     }
 
-    public void setLaunchDate(LocalDateTime launchDate) {
-        launchDate = LocalDateTime.now();
+    public void setLaunchDate(String launchDate) {
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+        launchDate = now.format(formatter);
         this.launchDate = launchDate;
     }
 }

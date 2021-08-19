@@ -17,9 +17,9 @@
         <p th:text="${sl.question}"></p>
         <input type=hidden th:field="*{listOfQuestions[__${iter.index}__].question}">
         <input type=hidden th:field="*{listOfQuestions[__${iter.index}__].launchDate}">
-        <input type="radio" id = "option1" th:field="*{listOfQuestions[__${iter.index}__].answer}"  th:value = "yes">
+        <input type="radio" id = "option1" th:field="*{listOfQuestions[__${iter.index}__].answer}"  th:value = "Yes">
         <label for="option1">Yes</label><br>
-        <input type="radio" id = "option2" th:field="*{listOfQuestions[__${iter.index}__].answer}" th:value = "no" >
+        <input type="radio" id = "option2" th:field="*{listOfQuestions[__${iter.index}__].answer}" th:value = "No" >
         <label for="option2">No</label><br>
         <br>
     </div>

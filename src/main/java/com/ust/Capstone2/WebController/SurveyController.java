@@ -92,12 +92,13 @@ public class SurveyController {
         questionsList.add(surveyDetails9);
 
         SurveyCreationDto surveyForm = new SurveyCreationDto();
-        for(int i=1;i<=9;i++) {
+        surveyForm.setListOfQuestions(questionsList);
+        /*for(int i=1;i<=9;i++) {
             surveyForm.addSurvey(new SurveyDetails());
-        }
+        }*/
 
        model.addAttribute("surveyForm", surveyForm);
-       model.addAttribute("questions",questionsList);
+       //model.addAttribute("questions",questionsList);
 
         return "survey";
     }

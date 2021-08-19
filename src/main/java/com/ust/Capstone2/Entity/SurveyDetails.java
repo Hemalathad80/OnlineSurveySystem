@@ -13,7 +13,7 @@ public class SurveyDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "question")
+    @Column(name = "question", columnDefinition="VARCHAR(1024)")
     private String question;
 
     @Column(name = "answer")

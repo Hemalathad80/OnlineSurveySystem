@@ -52,6 +52,7 @@ public class SurveyDetails {
     }
 
     public void setLaunchDate(LocalDateTime launchDate) {
+        launchDate = LocalDateTime.now();
         this.launchDate = launchDate;
     }
 }

@@ -11,5 +11,8 @@ public interface SurveyService {
     SurveyDetails getById(long id);
 
     void saveAllSurveyDetails(List<SurveyDetails> surveyDetailsList);
+
+    List<SurveyDetails> getAllSurveyDetails();
+
 }
 

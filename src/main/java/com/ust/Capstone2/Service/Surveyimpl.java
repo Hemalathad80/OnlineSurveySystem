@@ -28,4 +28,11 @@ public class Surveyimpl implements SurveyService {
     public SurveyDetails getById(long id) {
         return surveyDetailsRepository.getById(id);
     }
+
+    @Override
+    public List<SurveyDetails> getAllSurveyDetails(){
+     return this.surveyDetailsRepository.findAll();
+    }
+
+
 }

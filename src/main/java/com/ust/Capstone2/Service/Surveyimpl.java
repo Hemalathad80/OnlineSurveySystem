@@ -31,7 +31,8 @@ public class Surveyimpl implements SurveyService {
 
     @Override
     public List<SurveyDetails> getAllSurveyDetails(){
-     return this.surveyDetailsRepository.findAll();
+
+        return this.surveyDetailsRepository.findAll();
     }
 
 

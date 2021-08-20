@@ -9,9 +9,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 
 @Controller
@@ -24,7 +25,7 @@ public class SurveyController {
     @GetMapping("/survey")
     public String surveyForm(Model model) {
 
-       List<SurveyDetails> questionsList = new ArrayList<SurveyDetails>();
+        List<SurveyDetails> questionsList = new ArrayList<SurveyDetails>();
 
         SurveyDetails surveyDetails1 = new SurveyDetails();
         SurveyDetails surveyDetails2 = new SurveyDetails();
@@ -89,6 +90,20 @@ public class SurveyController {
 
     @GetMapping("/result")
     public String showResultPage(Model model) {
+        List<SurveyDetails> sdObj = surveyService.getAllSurveyDetails();
+        //Map<String, Integer> graphData = new TreeMap<>();
+
+        Map<SurveyDetails, Long> graphData =
+                sdObj.stream().collect(
+                        Collectors.groupingBy(
+                                Function.identity(), Collectors.counting()
+                        )
+                );
+
+
+        //graphData.put(sd.getQuestion(), counterForYes);
+        //graphData.put(sd.getQuestion(), counterForNo);
+
         return "result";
     }
 

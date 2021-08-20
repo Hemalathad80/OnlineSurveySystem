@@ -3,28 +3,42 @@
 <head>
     <title>Getting Started: SurveyForm</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.cs">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+          integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
           crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-<h1>Welcome to the Online Survey System</h1><br>
-<h2>COVID-19 Return to work survey</h2>
+<h1 class="display-1" >Welcome to the Online Survey System</h1><br>
+<h1 class="display-2" >COVID-19 Return to work survey</h1>
 
 <form action="#" th:action="@{/saveSurveyDetails}" th:object="${surveyForm}" method="POST">
-    <div th:each="sl, iter : *{listOfQuestions}" >
-        <p th:text="${sl.question}"></p>
-        <input type=hidden th:field="*{listOfQuestions[__${iter.index}__].question}">
-        <input type=hidden th:field="*{listOfQuestions[__${iter.index}__].launchDate}">
-        <input type="radio" id = "option1" th:field="*{listOfQuestions[__${iter.index}__].answer}"  th:value = "Yes">
-        <label for="option1">Yes</label><br>
-        <input type="radio" id = "option2" th:field="*{listOfQuestions[__${iter.index}__].answer}" th:value = "No" >
-        <label for="option2">No</label><br>
-        <br>
+    <div th:each="sl, iter : *{listOfQuestions}">
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <h3 class="panel-heading" th:text="${sl.question}"></h3>
+                <input type=hidden th:field="*{listOfQuestions[__${iter.index}__].question}">
+                <input type=hidden th:field="*{listOfQuestions[__${iter.index}__].launchDate}">
+               <h2><input class="panel-body" type="radio" id="option1"
+                       th:field="*{listOfQuestions[__${iter.index}__].answer}" th:value="Yes">
+                <label class="radio-inline" for="option1">Yes</label><br>
+                <input class="panel-body" type="radio" id="option2"
+                       th:field="*{listOfQuestions[__${iter.index}__].answer}" th:value="No">
+                <label class="radio-inline" for="option2">No</label><br></h2>
+                <br>
+            </div>
+        </div>
     </div>
 
-     <button type="submit" >Submit</button>
+    <button type="submit" class="btn btn-outline-success"><h1>Submit</h1></button>
 </form>
 </body>
 </html>

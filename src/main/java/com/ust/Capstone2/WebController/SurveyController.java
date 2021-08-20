@@ -91,20 +91,33 @@ public class SurveyController {
     @GetMapping("/result")
     public String showResultPage(Model model) {
         List<SurveyDetails> sdObj = surveyService.getAllSurveyDetails();
+        //System.out.println("received from repository : " + sdObj);
         //Map<String, Integer> graphData = new TreeMap<>();
+        String answer1 = "Yes";
+        String answer2 = "No";
+        Map<String, Integer> graphData = new TreeMap<>();
 
-        Map<SurveyDetails, Long> graphData =
-                sdObj.stream().collect(
-                        Collectors.groupingBy(
-                                Function.identity(), Collectors.counting()
-                        )
-                );
+        TreeMap<String, Integer> sortedMap = new TreeMap<>();
+        Map<String, Integer> tempData = sdObj.stream().filter(s -> s.getAnswer()!= null && s.getAnswer().equalsIgnoreCase(answer1))
+                .collect(Collectors.groupingBy(SurveyDetails::getQuestion,
+                        Collectors.reducing(0, e -> 1, Integer::sum)));
+        sortedMap.putAll(tempData);
+        graphData = sortedMap;
+        sortedMap = new TreeMap<>();
 
+     /*   tempData = sdObj.stream().filter(s -> s.getAnswer().equalsIgnoreCase(answer2))
+                .collect(Collectors.groupingBy(SurveyDetails::getQuestion,
+                        Collectors.reducing(0, e -> 1, Integer::sum)));
+        sortedMap.putAll(tempData);
+        graphData = sortedMap;
+*/
+        System.out.println("graph data is : " + graphData);
 
         //graphData.put(sd.getQuestion(), counterForYes);
         //graphData.put(sd.getQuestion(), counterForNo);
-
+        model.addAttribute("chartData", graphData);
         return "result";
     }
+
 
 }

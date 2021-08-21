@@ -17,16 +17,22 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
 
 </head>
-<body th:style="'background-image:url(' + @{images/return-or-remain-considerations.jpg} + '); background-repeat: no-repeat, repeat; background-size: cover;'">
+<body>
 <div class="col-12">
 
-           <div class="col-12" style="background-color: rgba(0,0,0, 0.4);">
-            <h1 class="display-4 text-white">Welcome to the Online Survey System</h1>
+           <div class="col-12" style="background-color: rgba(0,0,0, 0.4);text-align: center">
+               <h1 class="display-1 font-weight-bold" style="color:white">Welcome to The Online Survey System</h1><br>
 
            </div>
 
+
 </div>
 
-<a th:href="@{/survey}"><h1>Please click here to take part in this survey</h1></a>
+<a th:href="@{/survey}"><h1 style="text-align: center">Please click here to take part in this survey</h1></a>
+
+<img src="../static/images/return-or-remain-considerations.jpg" width="1300" height="500" style="padding-left: 35px;margin-right: auto "
+     th:src="@{images/return-or-remain-considerations.jpg}"/>
+
+
 </body>
 </html>

@@ -18,30 +18,32 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
 </head>
 <body style="background-color: rgba(0,0,255,.1)">
-<h1 class="display-2 text-success font-weight-bold">COVID-19 Return to work survey</h1>
+<h1 class="display-2 text-success font-weight-bold" style="text-align: center">COVID-19 Return To Work Survey</h1>
 
 <form action="#" th:action="@{/saveSurveyDetails}" th:object="${surveyForm}" method="POST">
     <div th:each="sl, iter : *{listOfQuestions}">
         <div class="panel-group">
             <div class="panel panel-default">
-                <h3 class="panel-heading" th:text="${sl.question}"></h3>
+                <h2 class="panel-heading" th:text="${sl.question}"></h2>
                 <input type=hidden th:field="*{listOfQuestions[__${iter.index}__].question}">
                 <input type=hidden th:field="*{listOfQuestions[__${iter.index}__].launchDate}">
 
-                <h2><input class="panel-body" type="radio" id="option1"
+                <h2 style="margin-left: 30px"><input class="panel-body" type="radio" id="option1"
                            th:field="*{listOfQuestions[__${iter.index}__].answer}" th:value="Yes">
                     <label class="radio-inline" for="option1">Yes</label><br>
                     <input class="panel-body" type="radio" id="option2"
                            th:field="*{listOfQuestions[__${iter.index}__].answer}" th:value="No">
-                    <label class="radio-inline " for="option2">No</label><br></h2>
+                    <label class="radio-inline" for="option2">No</label><br></h2>
                 <br>
             </div>
 
         </div>
     </div>
-    </div>
 
+<div style="text-align: center; padding-bottom: 30px">
     <button type="submit" class="btn btn-outline-success"><h1>Submit</h1></button>
+</div>
+
 </form>
 </body>
 </html>

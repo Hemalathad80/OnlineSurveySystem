@@ -21,6 +21,11 @@ public class SurveyController {
     @Autowired
     private SurveyService surveyService;
 
+    @GetMapping("/")
+    public String WelcomePage(Model model){
+        return "index";
+    }
+
 
     @GetMapping("/survey")
     public String surveyForm(Model model) {

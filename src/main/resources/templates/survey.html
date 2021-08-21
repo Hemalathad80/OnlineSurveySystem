@@ -19,7 +19,6 @@
 </head>
 <body style="background-color: rgba(0,0,255,.1)">
 <h1 class="display-2 text-success font-weight-bold" style="text-align: center">COVID-19 Return To Work Survey</h1>
-
 <form action="#" th:action="@{/saveSurveyDetails}" th:object="${surveyForm}" method="POST">
     <div th:each="sl, iter : *{listOfQuestions}">
         <div class="panel-group">

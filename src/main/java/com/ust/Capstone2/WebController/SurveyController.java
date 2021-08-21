@@ -66,7 +66,6 @@ public class SurveyController {
         surveyForm.setListOfQuestions(questionsList);
 
         model.addAttribute("surveyForm", surveyForm);
-        //model.addAttribute("questions",questionsList);
 
         return "survey";
     }
@@ -74,15 +73,7 @@ public class SurveyController {
     @PostMapping("/saveSurveyDetails")
     public String saveSurveyDetails(@ModelAttribute("surveyForm") SurveyCreationDto surveyForm) {
         // save employee to database
-        /*for (SurveyDetails survey : listOfQuestions) {
-            surveyService.saveSurveyDetails(survey);
-        }
-        System.out.println("saveSurveyDetails() is called" + surveyForm.getListOfQuestions() );
-        for( SurveyDetails s : surveyForm.getListOfQuestions()) {
-            System.out.println("The answer is" + s.toString());
-        }*/
         surveyService.saveAllSurveyDetails(surveyForm.getListOfQuestions());
-        //surveyService.saveSurveyDetails(surveyForm);
         return "redirect:/thankyou";
     }
 

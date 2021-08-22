@@ -1,7 +1,7 @@
 package com.ust.Capstone2.Service;
 
 import com.ust.Capstone2.Entity.SurveyDetails;
-import com.ust.Capstone2.Repository.SurveyDetailsRepository;
+import com.ust.Capstone2.ActualRepository.SurveyDetailsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

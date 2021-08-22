@@ -1,9 +1,8 @@
 
 package com.ust.Capstone2.Service;
 
-import com.ust.Capstone2.Entity.SurveyDetails;
-import org.junit.jupiter.api.Test;
 
+/*
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -26,11 +25,14 @@ public class SurveyimplTest {
 
     @Test
     void getAllSurveyDetailsTest() {
-        List<SurveyDetails> listOfDetails =  surveyImplTwo.getAllSurveyDetails();
+        List<SurveyDetails> listOfDetails = surveyImplTwo.getAllSurveyDetails();
         assertNotNull(listOfDetails);
 
     }
-
-
-
 }
+*/
+
+
+
+
+

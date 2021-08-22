@@ -1,4 +1,4 @@
-/*
+
 package com.ust.Capstone2.WebController;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -25,7 +25,7 @@ class SurveyControllerTest {
 
     }
 }
-*/
+
 
 
 

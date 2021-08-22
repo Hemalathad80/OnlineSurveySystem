@@ -28,7 +28,8 @@
                 <input type=hidden th:field="*{listOfQuestions[__${iter.index}__].launchDate}">
 
                 <h2 style="margin-left: 30px"><input class="panel-body" type="radio" id="option1"
-                           th:field="*{listOfQuestions[__${iter.index}__].answer}" th:value="Yes">
+                                                     th:field="*{listOfQuestions[__${iter.index}__].answer}"
+                                                     th:value="Yes">
                     <label class="radio-inline" for="option1">Yes</label><br>
                     <input class="panel-body" type="radio" id="option2"
                            th:field="*{listOfQuestions[__${iter.index}__].answer}" th:value="No">
@@ -39,9 +40,9 @@
         </div>
     </div>
 
-<div style="text-align: center; padding-bottom: 30px">
-    <button type="submit" class="btn btn-outline-success"><h1>Submit</h1></button>
-</div>
+    <div style="text-align: center; padding-bottom: 30px">
+        <button type="submit" class="btn btn-outline-success"><h1>Submit</h1></button>
+    </div>
 
 </form>
 </body>

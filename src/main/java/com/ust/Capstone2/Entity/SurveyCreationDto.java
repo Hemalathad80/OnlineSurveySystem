@@ -3,9 +3,10 @@ package com.ust.Capstone2.Entity;
 import java.util.ArrayList;
 import java.util.List;
 
+//Wrapper class for the list of questions
 public class SurveyCreationDto {
 
-    private List<SurveyDetails> listOfQuestions = new ArrayList<>(9);
+    private List<SurveyDetails> listOfQuestions = new ArrayList<>(7);
 
     public void addSurvey(SurveyDetails sdObj){
         this.listOfQuestions.add(sdObj);

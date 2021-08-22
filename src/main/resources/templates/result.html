@@ -1,3 +1,7 @@
+<!-- Extracted codes from Google Chart API
+https://www.wimdeblauwe.com/blog/2021/01/05/using-google-charts-with-thymeleaf/
+https://asbnotebook.com/google-chart-example-with-spring-boot/ -->
+
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -18,42 +22,44 @@
 </div>
 <script th:inline="javascript">
     var real_data = /*[[${chartData}]]*/'noValue';
-    $(document).ready(function() {
+    $(document).ready(function () {
         google.charts.load('current', {
-            packages : [ 'corechart', 'bar' ]
+            packages: ['corechart', 'bar']
         });
         google.charts.setOnLoadCallback(drawColumnChart);
         google.charts.setOnLoadCallback(drawPieChart);
     });
+
     function drawColumnChart() {
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Questions');
         data.addColumn('number', 'Response');
-        Object.keys(real_data).forEach(function(key) {
-            data.addRow([ key, real_data[key] ]);
+        Object.keys(real_data).forEach(function (key) {
+            data.addRow([key, real_data[key]]);
         });
         var options = {
-            title : 'Column Chart Comparison',
-            hAxis : {
-                title : 'Questions',
+            title: 'Column Chart Comparison',
+            hAxis: {
+                title: 'Questions',
             },
-            vAxis : {
-                title : 'View Responses'
+            vAxis: {
+                title: 'View Yes Responses'
             }
         };
         var chart = new google.visualization.ColumnChart(document
             .getElementById('chart_div'));
         chart.draw(data, options);
     }
+
     function drawPieChart() {
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Questions');
-        data.addColumn('number', 'Responses');
-        Object.keys(real_data).forEach(function(key) {
-            data.addRow([ key, real_data[key] ]);
+        data.addColumn('number', 'Yes Responses');
+        Object.keys(real_data).forEach(function (key) {
+            data.addRow([key, real_data[key]]);
         });
         var options = {
-            title : 'Pie-Chart Comparison'
+            title: 'Pie-Chart Comparison'
         };
         var chart = new google.visualization.PieChart(document
             .getElementById('piechart'));

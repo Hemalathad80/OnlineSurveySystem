@@ -1,7 +1,6 @@
 package com.ust.Capstone2.Entity;
 
 import org.springframework.format.annotation.DateTimeFormat;
-
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -52,6 +51,7 @@ public class SurveyDetails {
         return launchDate;
     }
 
+    //Formatting the date and time using DateFormatter
     public void setLaunchDate(String launchDate) {
         LocalDateTime now = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");

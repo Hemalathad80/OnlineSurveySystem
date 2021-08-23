@@ -1,6 +1,5 @@
 package com.ust.Capstone2.Entity;
 
-import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

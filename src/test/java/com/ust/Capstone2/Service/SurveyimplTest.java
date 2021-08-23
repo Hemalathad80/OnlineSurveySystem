@@ -1,36 +1,29 @@
 
 package com.ust.Capstone2.Service;
 
+import com.ust.Capstone2.Entity.SurveyDetails;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
-/*
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.assertj.core.api.Assertions.assertThat;
 
-//import org.springframework.boot.web.server.LocalServerPort;
-
+@SpringBootTest
 public class SurveyimplTest {
 
-
-    Surveyimpl surveyimpl = new Surveyimpl();
+    @Autowired
+    Surveyimpl surveyimpl;
 
     @Test
     public void findAll_success() {
         List<SurveyDetails> allSurveyDetails = surveyimpl.getAllSurveyDetails();
-        assertFalse(allSurveyDetails.isEmpty());
+
+        assertThat(allSurveyDetails).isNotNull();
     }
 
-    Surveyimpl surveyImplTwo = new Surveyimpl();
-
-    @Test
-    void getAllSurveyDetailsTest() {
-        List<SurveyDetails> listOfDetails = surveyImplTwo.getAllSurveyDetails();
-        assertNotNull(listOfDetails);
-
-    }
 }
-*/
 
 
 
